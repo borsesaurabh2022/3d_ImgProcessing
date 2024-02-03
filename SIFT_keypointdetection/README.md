@@ -1,8 +1,10 @@
 # 3d_ImgProcessing: SIFT keypoint detection:
 
-This repository consist of Matlab scripts to demonstrate the implementation of the SIFT(Scale- Invarient Feature TRansform) keypoint/feature detection. The implementation is based on the a computer vision algorithm developed by David G. Lowe.
-David G. Lowe introduced SIFT in his paper titled "Distinctive Image Features from Scale-Invariant Keypoints," which was published in 2004. 
-Honestly, the implementing the sift feature is quite different compared to calculative approach behind it, t 
+This collection includes Matlab scripts designed to showcase the practical application of the Scale-Invariant Feature Transform (SIFT) for key points and feature detection. The implementation is rooted in the computer vision algorithm devised by David G. Lowe.
+
+SIFT, introduced by David G. Lowe in his 2004 paper "Distinctive Image Features from Scale-Invariant Keypoints," serves as the foundation for this implementation. It's worth noting that the process of implementing SIFT features differs significantly from understanding the mathematical intricacies that underlie the algorithm.
+
+So, instead of relying on the fancy pre-built SIFT feature detection tools in Matlab and OpenCV, we thought, "Hey, why not reinvent the wheel?!" Our collection of Matlab scripts is like baking a cake from scratch when you could just buy one at the store – it's all about embracing the journey, even if it involves a few extra flour explosions along the way.
 
 ## Implementation:
 - Image Preprocessing:
@@ -15,29 +17,29 @@ Honestly, the implementing the sift feature is quite different compared to calcu
   Each octave consists of a series of blurred and downsampled images.
   
 - Keypoint Detection (Extrema):
-  Identify local extrema in the DoG pyramid to locate potential keypoints.
+  Identify local extrema in the DoG pyramid to locate potential key points.
   Refine keypoint locations with subpixel accuracy using a second-order Taylor series expansion.
   
 - Keypoint Elimination:
-  Eliminate keypoints with low contrast or poorly localized on edges.
-  Use a 2x2 Hessian matrix to check the curvature for eliminating poorly localized keypoints.
+  Eliminate key points with low contrast or poorly localized edges.
+  Use a 2x2 Hessian matrix to check the curvature to eliminate poorly localized key points.
   
 - Orientation Assignment:
-  Assign consistent orientations to keypoints based on local image gradients.
-  Create an orientation histogram from gradient orientations in a region around each keypoint.
+  Assign consistent orientations to key points based on local image gradients.
+  Create an orientation histogram from gradient orientations in a region around each key point.
 
 - Descriptor Computation:
-  Compute distinctive descriptors for each keypoint.
-  Sample image gradients and orientations around the keypoint.
+  Compute distinctive descriptors for each key point.
+  Sample image gradients and orientations around the key point.
   Apply Gaussian weighting and achieve orientation invariance by rotating coordinates.
 
 - Feature Matching:
-  Perform matching tests to test repeatability and stability of SIFT features.
-  Compare keypoints between an original image and a transformed version using computed descriptors.
-  Use matching errors to identify likely keypoint correspondences and set the transformation.
+  Perform matching tests to test the repeatability and stability of SIFT features.
+  Compare key points between an original image and a transformed version using computed descriptors.
+  Use matching errors to identify likely key point correspondences and set the transformation.
 
 - Results and Conclusion:
-  Evaluate and showcase results, including visual representations of keypoints.
+  Evaluate and showcase results, including visual representations of key points.
   Conclude the implementation, emphasizing the distinctiveness and invariance of SIFT features.
   
 ## References:
